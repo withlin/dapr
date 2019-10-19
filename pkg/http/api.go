@@ -110,7 +110,7 @@ func (a *api) constructStateEndpoints() []Endpoint {
 
 func (a *api) constructPubSubEndpoints() []Endpoint {
 	return []Endpoint{
-		Endpoint{
+		{
 			Methods: []string{http.Post, http.Put},
 			Route:   "publish/<topic>",
 			Version: apiVersionV1,
@@ -121,7 +121,7 @@ func (a *api) constructPubSubEndpoints() []Endpoint {
 
 func (a *api) constructBindingsEndpoints() []Endpoint {
 	return []Endpoint{
-		Endpoint{
+		{
 			Methods: []string{http.Post, http.Put},
 			Route:   "bindings/<name>",
 			Version: apiVersionV1,

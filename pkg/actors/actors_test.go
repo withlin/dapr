@@ -530,7 +530,7 @@ func TestTransactionalState(t *testing.T) {
 			ActorType: actorType,
 			ActorID:   actorID,
 			Operations: []TransactionalOperation{
-				TransactionalOperation{
+				{
 					Operation: Upsert,
 					Request: TransactionalUpsert{
 						Key:   "key1",
@@ -553,14 +553,14 @@ func TestTransactionalState(t *testing.T) {
 			ActorType: actorType,
 			ActorID:   actorID,
 			Operations: []TransactionalOperation{
-				TransactionalOperation{
+				{
 					Operation: Upsert,
 					Request: TransactionalUpsert{
 						Key:   "key1",
 						Value: "fakeData",
 					},
 				},
-				TransactionalOperation{
+				{
 					Operation: Delete,
 					Request: TransactionalDelete{
 						Key: "key1",
@@ -582,7 +582,7 @@ func TestTransactionalState(t *testing.T) {
 			ActorType: actorType,
 			ActorID:   actorID,
 			Operations: []TransactionalOperation{
-				TransactionalOperation{
+				{
 					Operation: Upsert,
 					Request:   "wrongBody",
 				},
@@ -602,7 +602,7 @@ func TestTransactionalState(t *testing.T) {
 			ActorType: actorType,
 			ActorID:   actorID,
 			Operations: []TransactionalOperation{
-				TransactionalOperation{
+				{
 					Operation: "Wrong",
 					Request:   "wrongBody",
 				},

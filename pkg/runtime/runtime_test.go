@@ -214,7 +214,7 @@ func TestInitSecretStores(t *testing.T) {
 func TestMetadataItemsToPropertiesConversion(t *testing.T) {
 	rt := NewTestDaprRuntime(modes.StandaloneMode)
 	items := []components_v1alpha1.MetadataItem{
-		components_v1alpha1.MetadataItem{
+		{
 			Name:  "a",
 			Value: "b",
 		},
@@ -232,14 +232,14 @@ func TestProcessComponentSecrets(t *testing.T) {
 		Spec: components_v1alpha1.ComponentSpec{
 			Type: "bindings.mock",
 			Metadata: []components_v1alpha1.MetadataItem{
-				components_v1alpha1.MetadataItem{
+				{
 					Name: "a",
 					SecretKeyRef: components_v1alpha1.SecretKeyRef{
 						Key:  "key1",
 						Name: "name1",
 					},
 				},
-				components_v1alpha1.MetadataItem{
+				{
 					Name:  "b",
 					Value: "value2",
 				},
@@ -330,14 +330,14 @@ func TestInitSecretStoresInKubernetesMode(t *testing.T) {
 		Spec: components_v1alpha1.ComponentSpec{
 			Type: "secretstores.fake.secretstore",
 			Metadata: []components_v1alpha1.MetadataItem{
-				components_v1alpha1.MetadataItem{
+				{
 					Name: "a",
 					SecretKeyRef: components_v1alpha1.SecretKeyRef{
 						Key:  "key1",
 						Name: "name1",
 					},
 				},
-				components_v1alpha1.MetadataItem{
+				{
 					Name:  "b",
 					Value: "value2",
 				},
@@ -426,15 +426,15 @@ func getFakeProperties() map[string]string {
 
 func getFakeMetadataItems() []components_v1alpha1.MetadataItem {
 	return []components_v1alpha1.MetadataItem{
-		components_v1alpha1.MetadataItem{
+		{
 			Name:  "host",
 			Value: "localhost",
 		},
-		components_v1alpha1.MetadataItem{
+		{
 			Name:  "password",
 			Value: "fakePassword",
 		},
-		components_v1alpha1.MetadataItem{
+		{
 			Name:  "consumerID",
 			Value: TestRuntimeConfigID,
 		},

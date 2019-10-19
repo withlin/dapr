@@ -163,7 +163,7 @@ func TestSaveState(t *testing.T) {
 	client := dapr_pb.NewDaprClient(conn)
 	request := &dapr_pb.SaveStateEnvelope{
 		Requests: []*dapr_pb.StateRequest{
-			&dapr_pb.StateRequest{
+			{
 				Key:   "1",
 				Value: &any.Any{Value: []byte("2")},
 			},
